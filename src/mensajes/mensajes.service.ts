@@ -28,8 +28,7 @@ export class MensajesService {
     idMensaje: number,
     mensajeActualizar: CreateMensajeDto,
   ): Promise<Mensaje> {
-    const mensajeUpdate = await this.mensajeRepository.findOne({
-      where: { id: idMensaje },
+    const mensajeUpdate = await this.mensajeRepository.findOne({ where: { id: idMensaje },
     });
 
     mensajeUpdate.nick = mensajeActualizar.nick;
